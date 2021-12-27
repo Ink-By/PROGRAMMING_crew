@@ -9,3 +9,13 @@ git push
 cd .. 뒤로가기
 
 git remote set-url origin https://inkink10@github.com/inkink10/PROGRAMMING_crew.git
+
+cd PROGRAMMING_crew
+
+git pull origin main
+
+git add .
+
+git commit "아무거나"
+
+git push (git push origin main)
