@@ -1,55 +1,51 @@
 package Winter2021;
-/* https://www.acmicpc.net/problem/10828  */
+//시간초과 떄문에 다시 함
+//https://www.acmicpc.net/problem/10828
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.util.Stack;
 
-
-public class baek10828 {
+public class baek10828_BufferedReader {
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        Scanner sc = new Scanner(System.in);
-        int n = Integer.parseInt(sc.nextLine());
-        String [] order = new String[n];
-        for(int i=0;i<n;i++){
-            order[i]=sc.nextLine();
+        Stack<Integer> st = new Stack<Integer>();
+        int input = Integer.parseInt(br.readLine());
+        String [] order = new String[input];
+        for(int i=0;i<input;i++){
+            order[i]= br.readLine();
         }
-        Stack<Integer> stack = new Stack<Integer>();
-        for(int i=0;i<n;i++){
+        for(int i=0;i<input;i++){
             if(order[i].contains("push")){
                 String [] split = order[i].split(" ");
                 int number = Integer.parseInt(split[1]);
-                stack.push(number);
+                st.push(number);
             }
             if(order[i].equals("pop")){
-                if(stack.isEmpty()){
+                if(st.isEmpty()){
                     System.out.println(-1);
                 }else{
-                    System.out.println(stack.pop());
+                    System.out.println(st.pop());
                 }
             }
             if(order[i].contains("size")){
-                System.out.println(stack.size());
+                System.out.println(st.size());
             }
             if(order[i].contains("empty")){
-                if(stack.isEmpty()){
+                if(st.isEmpty()){
                     System.out.println(1);
                 }else{
                     System.out.println(0);
                 }
             }
             if(order[i].equals("top")){
-                if(stack.isEmpty()){
+                if(st.isEmpty()){
                     System.out.println(-1);
                 }
                 else{
-                    int lll = stack.pop();
+                    int lll = st.pop();
                     System.out.println(lll);
-                    stack.push(lll);
+                    st.push(lll);
                 }
             }
         }
