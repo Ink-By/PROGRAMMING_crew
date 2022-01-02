@@ -1,5 +1,9 @@
 ls로 무조건 파일 확인해보기
 
+git config --global user.name "유저 이름"
+
+git config --global user.email "가입할 때 사용한 메일 주소"
+
 cd "폴더이름" 으로 무조건 파일 들어가놓기
 
 git add _____(작업파일이름.형식)
