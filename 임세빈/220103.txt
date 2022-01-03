@@ -1,0 +1,26 @@
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+
+        String[] st = s.split("");
+
+        int[] list = new int[];
+
+        for (int i=0; i<s.length(); i++) {
+            list[i] = Integer.parseInt(st[i]);
+        }
+
+        IntStream str = Arrays.stream(list);
+
+        str.distinct().filter(i -> i%2 == 0).forEach(System.out::print);
+
+    }
+}
