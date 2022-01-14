@@ -1,6 +1,21 @@
 # PROGRAMMING_crew
 
 이 GITHUB는 놀면뭐하니의 공간입니다.
+#github에 넣는 코드 정리
+<
+
+cd PROGRAMMING_crew
+
+git pull origin main
+
+git add .
+
+git commit -m "아무거나"
+
+git push (git push origin main)
+
+>
+
 
 Day1 - 211228 완료
 
