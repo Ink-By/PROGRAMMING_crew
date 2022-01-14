@@ -1,0 +1,71 @@
+1. 소켓서버 연습 xml 제작
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity" android:orientation="vertical">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/clientmessage"/>
+        <Button
+                android:text="Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/clientsend"/>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <TextView
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/clientlog"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/servermessage"/>
+        <Button
+                android:text="Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/serversend"/>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <TextView
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/serverlog"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
+
+
+2. telephonymanager : 안드로이드 단말기 정보 가져옴
+* AndroidManifest.xml에 use-permission 추가 필요.
+* 호출 방법 : TelephonyMangaer tm = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+* 대표 함수
+- tm.getDeviceId() : IMEI값 조회
+- tm.getLine1Number() : 전화번호 조회
+- tm.getSimOperatorName() : 망사업자명 조회
+- tm.getCallState() : 음성통화 상태 조회
+- tm.getDataState() : 데이터통신 상태 조회
