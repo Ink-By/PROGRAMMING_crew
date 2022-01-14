@@ -2,7 +2,8 @@
 
 이 GITHUB는 놀면뭐하니의 공간입니다.
 #github에 넣는 코드 정리
-<
+
+--
 
 cd PROGRAMMING_crew
 
@@ -14,7 +15,7 @@ git commit -m "아무거나"
 
 git push (git push origin main)
 
->
+--
 
 
 Day1 - 211228 완료
@@ -30,3 +31,7 @@ Day3 - 워크숍 참여 알려주기,
 Day4 - 임세빈 학우의 수업, 카카오톡 만들기
 
 >과제: 백준 풀기
+Day5 - 카카오톡 만들기, 
+>변인경 : xml
+>최진경, 장진영 : client
+>임세빈, 정민경 : server
