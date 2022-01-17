@@ -1,0 +1,94 @@
+package com.example.socketpractice;
+
+import android.os.Handler;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText clientMessage;
+    EditText serverMessage;
+
+    Button clientButton;
+    Button serverButton;
+
+    TextView clientLog;
+    TextView serverLog;
+
+    Handler handler;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        clientMessage = findViewById(R.id.clientmessage);
+        serverMessage = findViewById(R.id.servermessage);
+
+        clientButton = findViewById(R.id.clientsend);
+        serverButton = findViewById(R.id.serversend);
+
+        clientLog = findViewById(R.id.clientlog);
+        serverLog = findViewById(R.id.serverlog);
+
+        clientButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String data = clientMessage.getText().toString();
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        send(data);
+                    }
+                }).start();
+            }
+        });
+
+        serverButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        startServer();
+                    }
+                }).start();
+            }
+        });
+
+    }
+
+    public void send(String message) {
+        int portN = 5001; // 무슨 기준으로 포트 넘버가 정해지는가?
+    }
+
+    public void startServer() {
+
+    }
+
+    public void printClientLog(String log) {
+        Log.d("MainActivity", log); // 무슨 역할? 꼭 있어야 하나?
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                clientLog.append(log + "\n");
+            }
+        });
+    }
+
+    public void printServerLog(String log) {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                serverLog.append(log + "\n");
+            }
+        });
+    }
+}
