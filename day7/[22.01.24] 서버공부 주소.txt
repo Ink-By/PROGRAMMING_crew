@@ -1,0 +1,4 @@
+소켓통신 참고 블로그 : https://varyeun.tistory.com/28
+포트넘버 내용 블로그 : https://mititch.tistory.com/36
+
++ firebase로 만드는 채팅창 : https://lcw126.tistory.com/107
