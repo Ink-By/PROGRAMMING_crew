@@ -17,6 +17,7 @@ public class Server extends Thread {
                 Object obj = in.readObject();
 
                 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+                out.writeObject(obj);
                 out.flush();
                 in.close();
                 out.close();
@@ -27,3 +28,10 @@ public class Server extends Thread {
         }
     }
 }
+
+
+
+/*
+1. extends Thread 는 어디에 쓰이는 것인가? 과제 코드에 있길래 넣었는데 쓰임새를 모르겠음.
+2. 과제코드처럼 inputstream을 쓴 것이 아니라 교재처럼 ObjectInputstream을 사용하였는데 정상적으로 작동이 될 것인가?
+*/
